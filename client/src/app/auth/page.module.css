@@ -1,0 +1,15 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    max-width: 470px;
+
+}
+
+.avatar {
+    display: flex;
+    gap: 20px;
+    max-width: 470px;
+
+}
