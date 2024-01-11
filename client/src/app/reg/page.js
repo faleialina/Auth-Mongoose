@@ -1,17 +1,23 @@
 'use client'
-import Header from "@/components/Header/Header";
+import style from './page.module.css'
+import Header from "@/components/Header/Header"
+import { Avatar, Button, TextField } from '@mui/material'
 
 export default function Reg() {
     return (
-        <div>
+        <div className={style.main}>
             <Header />
-            <h1>Registration</h1>
-            <input placeholder="name..."></input>
-            <input placeholder="surname..."></input>
-            <input placeholder="age..."></input>
-            <input placeholder="email..."></input>
-            <input placeholder="password..."></input>
-            <button>Sign Up</button>
+            <div className={style.avatar}>
+                <Avatar src="/broken-image.jpg" />
+                <h1>Registration</h1>
+            </div>
+            <TextField id="standard-basic" label="name..." variant="standard" />
+            <TextField id="standard-basic" label="surname..." variant="standard" />
+            <TextField id="standard-basic" label="age..." variant="standard" />
+            <TextField id="standard-basic" label="email..." variant="standard" />
+            <TextField id="standard-basic" label="password..." type="password" autoComplete="current-password" variant="standard" />
+
+            <Button variant="outlined" color="warning">Sign Up</Button>
         </div>
     )
 }

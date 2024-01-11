@@ -5,3 +5,8 @@
     gap: 50px;
     max-width: 470px;
 }
+
+.avatar {
+    display: flex;
+    gap: 20px;
+}
