@@ -4,9 +4,12 @@
     text-align: center;
     gap: 50px;
     max-width: 470px;
+    margin: auto;
 }
 
 .avatar {
     display: flex;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
