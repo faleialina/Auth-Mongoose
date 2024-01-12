@@ -14,7 +14,7 @@ export default function Auth() {
             </div>
             <TextField id="standard-basic" label="email" variant="standard" />
             <TextField id="standard-basic" label="password" type="password" autoComplete="current-password" variant="standard" />
-
+            
             <Button variant="outlined" color="warning">Sign In</Button>
         </div>
     )

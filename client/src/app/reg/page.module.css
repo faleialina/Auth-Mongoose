@@ -3,8 +3,6 @@
     flex-direction: column;
     text-align: center;
     gap: 50px;
-    max-width: 470px;
-    margin: auto;
 }
 
 .avatar {
