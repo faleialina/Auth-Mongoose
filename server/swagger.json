@@ -1,0 +1,40 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Auth-Mongoose",
+        "version": "1.0.0",
+        "description": "Приложение для регистриции и авторизации пользователей с использованием Mongoose"
+    },
+    "paths": {
+        "/user": {
+            "get": {
+                "tags": [
+                    "USER"
+                ],
+                "summary": "Получаем всех пользователей",
+                "description": "Получение всех сохраненных пользователей в БД",
+                "responses": {
+                    "200": {
+                        "description": "Успешный ответ имеет вид:",
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {
+                                        "_id": "65a574f658be0c749c11b284",
+                                        "name": "test",
+                                        "surname": "test",
+                                        "email": "test@mail.ru",
+                                        "password": "$2b$04$I0fIU79NJrB2CM4vy8iImeDW.EyThYunIRR0TG1smyXaI2NQQaLfS",
+                                        "age": 10,
+                                        "__v": 0
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "404": {}
+                }
+            }
+        }
+    }
+}
