@@ -34,6 +34,125 @@
                     },
                     "404": {}
                 }
+            },
+            "post": {
+                "tags": [
+                    "USER"
+                ],
+                "summary": "Создание пользователя",
+                "description": "После нажатия на кнопку `Try it out` ОБЯЗАТЕЛЬНО заполнить поля ввода email & password",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "surname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешный ответ имеет вид:",
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {
+                                        "_id": "659c376b7da83b49e5624bce",
+                                        "name": "test",
+                                        "surname": "test",
+                                        "email": "test@mail.ru",
+                                        "password": "$2b$10$WBBzr3GmXYyA8QqQGYVUqujfjo66RIMAgowkLcNSc/5HrG65SC2v.",
+                                        "age": 33,
+                                        "__v": 0
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{_id}":{
+            "put": {
+                "tags": [
+                    "USER"
+                ],
+                "summary": "Обновление пользователя",
+                "description": "Обновление пользователя по _id",
+                "parameters": [
+                    {
+                        "name": "_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "surname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешный ответ имеет вид:",
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {
+                                        "_id": "65a574f658be0c749c11b284",
+                                            "name": "test",
+                                            "surname": "test",
+                                            "email": "test@mail.ru",
+                                            "password": "$2b$04$I0fIU79NJrB2CM4vy8iImeDW.EyThYunIRR0TG1smyXaI2NQQaLfS",
+                                            "age": 10,
+                                            "__v": 0
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         }
     }
