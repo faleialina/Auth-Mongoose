@@ -40,7 +40,7 @@
                     "USER"
                 ],
                 "summary": "Создание пользователя",
-                "description": "После нажатия на кнопку `Try it out` ОБЯЗАТЕЛЬНО заполнить поля ввода email & password",
+                "description": "Заполнить поля ввода email & password",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -95,8 +95,8 @@
                 "tags": [
                     "USER"
                 ],
-                "summary": "Получение пользователя по _id",
-                "description": "Получение пользователя сохраненного в БД по _id ",
+                "summary": "Получение конкрктного пользователя",
+                "description": "Получение пользователя по _id, сохраненного в БД",
                 "parameters": [
                     {
                         "name": "_id",
@@ -158,8 +158,71 @@
                 "tags": [
                     "USER"
                 ],
-                "summary": "Обновление пользователя",
-                "description": "Обновление пользователя по _id",
+                "summary": "Обновление конкрктного пользователя",
+                "description": "Обновление пользователя по _id, сохраненного в БД",
+                "parameters": [
+                    {
+                        "name": "_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "surname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "age": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успешный ответ имеет вид:",
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {
+                                        "_id": "65a574f658be0c749c11b284",
+                                        "name": "test",
+                                        "surname": "test",
+                                        "email": "test@mail.ru",
+                                        "password": "$2b$04$I0fIU79NJrB2CM4vy8iImeDW.EyThYunIRR0TG1smyXaI2NQQaLfS",
+                                        "age": 10,
+                                        "__v": 0
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "USER"
+                ],
+                "summary": "Удаление конкрктного пользователя",
+                "description": "Удаление пользователя по _id, сохраненного в БД",
                 "parameters": [
                     {
                         "name": "_id",
