@@ -1,8 +1,25 @@
 const express = require('express');
 const { buildResponse } = require('../helper/buildResponse');
 const { generateToken } = require('../helper/jwt');
-const { createUser, authUser } = require('../service/user.service');
+const { getAllUser, getUserById, createUser, authUser } = require('../service/user.service');
 const route = express.Router();
+route.get('/', async (req, res) => {
+    try {
+        const data = await getAllUser();
+        buildResponse(res, data, 200);
+    } catch (error) {
+        buildResponse(res, error.message, 400);
+    }
+})
+
+route.get('/:_id', async (req, res) => {
+    try {
+        const data = await getUserById(req.params._id);
+        buildResponse(res, data, 200);
+    } catch (error) {
+        buildResponse(res, error.message, 400);
+    }
+})
 
 route.post('/', async (req, res) => {
     try {
@@ -17,6 +34,7 @@ route.post('/', async (req, res) => {
         buildResponse(res, error.message, 404)
     }
 })
+
 route.post('/auth', async (req, res) => {
     try {
         const data = await authUser(req.body)

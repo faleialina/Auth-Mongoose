@@ -1,5 +1,14 @@
-const { Table } = require("../db");
+const { Table, ObjectId } = require('../db');
 
+async function getAllUserDB() {
+    const data = await Table.find();
+    return data;
+}
+
+async function getUserByIdDB(_id) {
+    const data = await Table.find({ _id: new ObjectId(_id) });
+    return data;
+}
 
 async function createUserDB(user) {
     await Table.create(user);
@@ -13,4 +22,4 @@ async function getByEmail(user) {
 };
 
 
-module.exports = { createUserDB, getByEmail };
+module.exports = {getAllUserDB, getUserByIdDB, createUserDB, getByEmail };
