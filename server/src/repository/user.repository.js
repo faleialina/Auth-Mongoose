@@ -17,9 +17,20 @@ async function createUserDB(user) {
 };
 
 async function getByEmail(user) {
-    const data = await Table.find({ email:user.email });
+    const data = await Table.find({ email: user.email });
     return data;
 };
 
+async function updateUserDB(_id, user) {
+    await Table.updateOne({ _id: new ObjectId(_id) }, { $set: user });
+    const data = await Table.find({ _id: new ObjectId(_id) });
+    return data;
+}
 
-module.exports = {getAllUserDB, getUserByIdDB, createUserDB, getByEmail };
+async function deleteUserByIdDB(_id) {
+    await Table.deleteOne({ _id: new ObjectId(_id) });
+    const data = await Table.find();
+    return data;
+}
+
+module.exports = { getAllUserDB, getUserByIdDB, createUserDB, getByEmail, updateUserDB, deleteUserByIdDB };
