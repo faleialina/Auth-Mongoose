@@ -86,7 +86,8 @@
                                 ]
                             }
                         }
-                    }
+                    },
+                    "404": {}
                 }
             }
         },
@@ -107,32 +108,6 @@
                         }
                     }
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "surname": {
-                                        "type": "string"
-                                    },
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    },
-                                    "age": {
-                                        "type": "number"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
                 "responses": {
                     "200": {
                         "description": "Успешный ответ имеет вид:",
@@ -151,7 +126,8 @@
                                 ]
                             }
                         }
-                    }
+                    },
+                    "404": {}
                 }
             },
             "put": {
@@ -171,6 +147,7 @@
                     }
                 ],
                 "requestBody": {
+                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -214,7 +191,8 @@
                                 ]
                             }
                         }
-                    }
+                    },
+                    "404": {}
                 }
             },
             "delete": {
@@ -233,32 +211,6 @@
                         }
                     }
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
-                                    },
-                                    "surname": {
-                                        "type": "string"
-                                    },
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    },
-                                    "age": {
-                                        "type": "number"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
                 "responses": {
                     "200": {
                         "description": "Успешный ответ имеет вид:",
@@ -277,7 +229,8 @@
                                 ]
                             }
                         }
-                    }
+                    },
+                    "404": {}
                 }
             }
         },
